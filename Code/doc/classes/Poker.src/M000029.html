@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>play_round (Poker)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File poker.rb, line 29</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">play_round</span>
+    <span class="ruby-ivar">@deck</span> = <span class="ruby-constant">Deck</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-comment cmt"># deal each player a hand</span>
+    <span class="ruby-ivar">@players</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">player</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">player</span>.<span class="ruby-identifier">set_hand</span>(<span class="ruby-ivar">@deck</span>.<span class="ruby-identifier">deal_hand</span>(<span class="ruby-value">1</span>))
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># Each player plays a card</span>
+    <span class="ruby-ivar">@players</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">player</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@pile</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">player</span>.<span class="ruby-identifier">play</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">winning_card</span> = <span class="ruby-ivar">@pile</span>.<span class="ruby-identifier">calculate_winner</span>
+    <span class="ruby-identifier">winner</span> = <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-comment cmt"># find out who played the winning card</span>
+    <span class="ruby-ivar">@players</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">player</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">winning_card</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">player</span>.<span class="ruby-identifier">last_card_played</span>
+        <span class="ruby-identifier">winner</span> = <span class="ruby-identifier">player</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-ivar">@results</span>[<span class="ruby-identifier">winner</span>.<span class="ruby-identifier">name</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">winning_card</span>.<span class="ruby-identifier">to_string</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

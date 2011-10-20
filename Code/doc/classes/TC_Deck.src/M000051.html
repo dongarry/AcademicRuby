@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_find_3_of_a_kind (TC_Deck)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File TC_Deck.rb, line 30</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_find_3_of_a_kind</span>
+    <span class="ruby-identifier">my_deck</span> = <span class="ruby-constant">Deck</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">i</span>=<span class="ruby-value">0</span>
+    <span class="ruby-identifier">searching</span> = <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">searching</span>
+      <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+      <span class="ruby-identifier">card1</span> = <span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">pick_random</span>
+      <span class="ruby-identifier">card2</span> = <span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">pick_random</span>
+      <span class="ruby-identifier">card3</span> = <span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">pick_random</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">card1</span>.<span class="ruby-identifier">kind</span><span class="ruby-operator">==</span><span class="ruby-identifier">card2</span>.<span class="ruby-identifier">kind</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">card2</span>.<span class="ruby-identifier">kind</span><span class="ruby-operator">==</span><span class="ruby-identifier">card3</span>.<span class="ruby-identifier">kind</span>
+<span class="ruby-comment cmt">#       puts &quot;Found three #{card1.kind}S after #{i} attempts&quot;</span>
+<span class="ruby-comment cmt">#       puts card1.to_string, card2.to_string, card3.to_string</span>
+        <span class="ruby-identifier">searching</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">add</span> <span class="ruby-identifier">card1</span>
+      <span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">add</span> <span class="ruby-identifier">card2</span>
+      <span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">add</span> <span class="ruby-identifier">card3</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">searching</span>
+        <span class="ruby-identifier">assert</span> <span class="ruby-keyword kw">true</span> <span class="ruby-comment cmt"># 3 of a kind have been found</span>
+        <span class="ruby-keyword kw">return</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

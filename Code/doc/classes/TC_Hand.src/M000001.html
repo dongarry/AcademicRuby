@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_to_string (TC_Hand)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File TC_Hand.rb, line 6</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_to_string</span>
+    <span class="ruby-ivar">@my_hand</span> = <span class="ruby-constant">Hand</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">c</span> = <span class="ruby-constant">Card</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">:HEARTS</span>, <span class="ruby-identifier">:FOUR</span>
+    <span class="ruby-ivar">@my_hand</span>.<span class="ruby-identifier">add</span> <span class="ruby-identifier">c</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@my_hand</span>.<span class="ruby-identifier">to_string</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-ivar">@my_hand</span>.<span class="ruby-identifier">no_of_cards</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;FOUR of HEARTS &quot;</span>, <span class="ruby-ivar">@my_hand</span>.<span class="ruby-identifier">to_string</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

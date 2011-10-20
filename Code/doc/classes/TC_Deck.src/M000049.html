@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_initialize (TC_Deck)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File TC_Deck.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_initialize</span>
+    <span class="ruby-identifier">my_deck</span> = <span class="ruby-constant">Deck</span>.<span class="ruby-identifier">new</span> 
+    <span class="ruby-identifier">ace_of_spades</span> = <span class="ruby-constant">Card</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">:SPADES</span>, <span class="ruby-identifier">:ACE</span>
+    <span class="ruby-identifier">jack_of_hearts</span> = <span class="ruby-constant">Card</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">:HEARTS</span>, <span class="ruby-identifier">:JACK</span>
+    <span class="ruby-identifier">two_of_diamonds</span> = <span class="ruby-constant">Card</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">:DIAMONDS</span>, <span class="ruby-identifier">:TWO</span>
+    <span class="ruby-identifier">one_of_clubs</span> = <span class="ruby-constant">Card</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">:CLUBS</span>, <span class="ruby-identifier">:ONE</span>
+    <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">has_card?</span>(<span class="ruby-identifier">ace_of_spades</span>))
+    <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">has_card?</span>(<span class="ruby-identifier">jack_of_hearts</span>))
+    <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">has_card?</span>(<span class="ruby-identifier">two_of_diamonds</span>))
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">my_deck</span>.<span class="ruby-identifier">has_card?</span>(<span class="ruby-identifier">one_of_clubs</span>), <span class="ruby-keyword kw">false</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>
